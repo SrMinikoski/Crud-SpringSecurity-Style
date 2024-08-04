@@ -1,0 +1,83 @@
+<style>
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Verdana;
+        text-align: center;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    input{
+        width: 400px;
+        padding: 8px 20px;
+        border: rgba(2, 2, 2, 0.65) 2px solid;
+        border-radius: 20px;
+        box-shadow: 0px 5px 2px rgba(2, 2, 2, 0.24);
+        text-align: start;
+        margin: 5px;
+    }
+    button{
+        padding: 12px;
+        border: none;
+        border-radius: 50px;
+        background-color: orange;
+        width: 230px;
+        color: white;
+        transition: .2s;
+        box-shadow: 0px 5px 2px rgba(0, 0, 0, 0.16);
+        text-decoration: none;
+        margin: 5px auto;
+    }
+    button:hover{
+        background-color: orangered;
+        transform: scale(1.1);
+    }
+
+
+    section{
+        margin: 60px auto;
+        width: 600px;
+        height: 500px;
+        background-color: gray;
+        border-radius: 60px;
+        box-shadow: 0px 5px 2px rgba(0, 0, 0, 0.16);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #sair{
+        padding: 12px;
+        border: none;
+        border-radius: 50px;
+        background-color: orange;
+        width: 230px;
+        color: white;
+        transition: .2s;
+        box-shadow: 0px 5px 2px rgba(0, 0, 0, 0.16);
+        text-decoration: none;
+        margin: 5px auto;
+    }
+    #sair:hover{
+        background-color: orangered;
+        transform: scale(1.1);
+    }
+</style>
+<script src="https://kit.fontawesome.com/acc0f57857.js" crossorigin="anonymous"></script>
+<section>
+<h1>Alterar Pessoa</h1>
+<form action="#" th:action="@{/pessoa/alterar}" th:object="${pessoa}" method="post">
+    <input type="text"  placeholder="Nome:" th:field="*{nome}" required>
+    <input type="email" placeholder="Email:"name="email" id="email" th:field="*{email}" required>
+    <input type="text" placeholder="Telefone:"name="fone" id="fone" th:field="*{fone}" required>
+    <input type="text" placeholder="Função:"name="role" id="role" th:field="*{role}" required>
+    <input type="text" placeholder="Senha"name="senha" id="senha" th:field="*{senha}" required>
+
+    <button type="submit">Alterar <i class="fa-solid fa-pen-to-square"></i></button>
+    <a href="/" id="sair">Voltar ao menu</a>
+</section>
+</form>
